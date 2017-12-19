@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>plus-moins</title>
+    <link rel="stylesheet" href="css/plusmoins-style.css">
+  </head>
+  <body>
+    <h1>plus-moins</h1>
+    <h1 class="t2">javascript</h1>
+    <div class="blocjeux">
+      <br>
+      <p class="texte">Le but de ce jeu est simple : L'ordinateur choisit un nombre, au joueur de trouver ce nombre en proposant à son tour des nombres. Les seules indications donné par l'ordinateur sont "c'est plus" ou "c'est moins" !</p>
+      <br>
+        <input class="champ"type="text" name="" value="">
+        <button class="button"type="button" name="valider">valider</button>
+        <div class="blocD"><div id="image"> </div></div>
+
+    </div>
+
+    <script>
+      console.log("début du script")
+      var min = 1;
+      var max = 100;
+
+      var nb = Math.floor(Math.random() *(max - min + 1))+ min;
+      console.log(nb);
+      var cpt=0;
+      while (nb != essaie)
+      {
+        var essaie = prompt("saisissez un nombre entre 1 et 100");
+
+          if (isNaN(essaie))
+          {
+            alert("veuillez rentrer un nombre svp!!!");
+          }
+
+          else {
+
+        cpt++;
+        console.log(cpt);
+        console.log(essaie);
+          if (nb>essaie)
+          {
+              alert("c'est plus !!!");
+              alert("recommencez");
+          }
+          else if (nb<essaie)
+          {
+              alert("c'est moins !!!");
+              alert("recommencez !!!");
+          }
+          else
+          {
+            alert("c'est gagné !!!");
+            alert(cpt + "tour(s)");
+            document.getElementById("image").innerHTML= "<img src='./img/gagner.gif' class='image'>";
+
+          }
+          }
+      }
+      console.log("fin du script")
+/*image en clignotement*/
+    /*  control=true;
+
+      		function clignote()
+      		{
+      		document.images[0].src="gagner.gif";
+      		window.setTimeout("clignote2();",500);
+      		}
+
+      		function clignote2()
+      		{
+      		if (control!=false)
+      		{
+      		document.images[0].src="blank.gif";
+      		window.setTimeout("clignote();",500);
+      		}
+      		}
+
+      		function stopit()
+      		{
+      		control=false;
+      		}
+
+      		function doit()
+      		{
+      		control=true;
+      		clignote();
+      		}
+
+*/
+
+        /*
+          if (nb==essaie)  {
+            .element (visibility)
+          }
+          else {
+            .element (hidden);
+          }
+*/
+
+
+
+    </script>
+  </body>
+</html>
